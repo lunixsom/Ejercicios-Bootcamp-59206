@@ -21,4 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-//textArea.innerHTML = "PRUEBa"
+/* Punto 5 */
+
+
