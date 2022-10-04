@@ -3,6 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const coleccionInput = document.querySelectorAll("input");
   const botonAMinusculas = document.querySelector("button");
   const divDestino = document.getElementById("destino");
+  const contenedorInputsSuperiores = document.querySelector("body");
+
+  let contenidoOrigen = textArea.value;
 
   /* Punto 2 */
   console.log("Contenido del DOM cargado");
@@ -22,9 +25,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* Punto 5 */
 
-  function agregarNvecesADivDestino(cant = 1) {
-    let contenidoOrigen = "";
+  function cualBotonEs(unBoton) {
+    switch (unBoton.value) {
+      case "Agregar":
+        agregarNvecesADivDestino();
+        break;
+      case "Agregar 5 veces":
+        agregarNvecesADivDestino(5);
+        break;
+      case "Agregar 10 veces":
+        agregarNvecesADivDestino(10);
+        break;
+      /*       case 'Agregar n veces':
+        agregarNvecesADivDestino()
+        break; */
 
+      default:
+        break;
+    }
+  }
+
+  function agregarNvecesADivDestino(cant = 1) {
     for (let i = 0; i < cant; i++) {
       contenidoOrigen += textArea.value;
     }
@@ -33,7 +54,20 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log(divDestino);
   }
 
-  coleccionInput[0].addEventListener("click", () => {
-    agregarNvecesADivDestino();
+/*   coleccionInput[0].addEventListener("click", () => {
+    contenidoOrigen = ''
+    //divDestino.value =  contenidoOrigen
+    //console.log(divDestino.textContent)
+    divDestino.innerHTML = contenidoOrigen
+    //console.log(contenidoOrigen)
+  }) */
+
+  
+  contenedorInputsSuperiores.addEventListener("click", (e) => {
+    if (e.target.className === "btn-agregar") {
+      cualBotonEs(e.target);
+    } else {
+      e.preventDefault();
+    }
   });
 });
