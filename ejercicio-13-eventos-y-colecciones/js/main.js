@@ -85,4 +85,12 @@ document.addEventListener("DOMContentLoaded", () => {
     divDestino.innerHTML =  contenidoOrigen.toLowerCase()
  })
 
-});
+ /* Punto 7 */
+
+ const coleccionDeLi = document.getElementsByTagName('li')
+
+ for (let i = 0; i < coleccionDeLi.length; i++) {
+  console.log(`[OK] ${coleccionDeLi[i].innerText}`)
+ }
+
+})
