@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* Punto 4 */
   textArea.addEventListener("input", () => {
-    botonAMinusculas.disabled = false;
+    btnAMinusculas.disabled = false;
 
     coleccionInput.forEach((input) => {
       input.disabled = false;
@@ -76,4 +76,13 @@ document.addEventListener("DOMContentLoaded", () => {
   btnVaciar.addEventListener('click', () => {
     divDestino.innerHTML = ''
   })
+
+  btnAMayuculas.addEventListener('click', () => {
+     divDestino.innerHTML =  contenidoOrigen.toUpperCase()
+  })
+
+  btnAMinusculas.addEventListener('click', () => {
+    divDestino.innerHTML =  contenidoOrigen.toLowerCase()
+ })
+
 });
