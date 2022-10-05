@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const botonAMinusculas = document.querySelector("button");
   const divDestino = document.getElementById("destino");
   const contenedorInputsSuperiores = document.querySelector("body");
+  const botonReemplazar = document.getElementById('btn-reemplazar')
 
   let contenidoOrigen = textArea.value;
 
@@ -55,14 +56,21 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log(divDestino);
   }
 
-  /*   coleccionInput[0].addEventListener("click", () => {
+  botonReemplazar.addEventListener('click', () => {
+    contenidoOrigen = textArea.value
+    //console.log(contenidoOrigen)
+    divDestino.innerHTML = contenidoOrigen 
+
+  })
+
+/*     coleccionInput[0].addEventListener("click", () => {
     contenidoOrigen = ''
     //divDestino.value =  contenidoOrigen
     //console.log(divDestino.textContent)
     divDestino.innerHTML = contenidoOrigen
     //console.log(contenidoOrigen)
-  }) */
-
+  })
+ */
   contenedorInputsSuperiores.addEventListener("click", (e) => {
     if (e.target.className === "btn-agregar") {
       cualBotonEs(e.target);
