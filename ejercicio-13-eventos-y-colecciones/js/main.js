@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const botonAMinusculas = document.querySelector("button");
   const divDestino = document.getElementById("destino");
   const contenedorInputsSuperiores = document.querySelector("body");
-  const botonReemplazar = document.getElementById('btn-reemplazar')
+  const botonReemplazar = document.getElementById("btn-reemplazar");
 
   let contenidoOrigen = textArea.value;
 
@@ -49,28 +49,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function agregarNvecesADivDestino(cant = 1) {
     for (let i = 0; i < cant; i++) {
-      contenidoOrigen += textArea.value;
+      contenidoOrigen += `${textArea.value} `;
     }
 
     divDestino.innerHTML = contenidoOrigen;
     console.log(divDestino);
   }
 
-  botonReemplazar.addEventListener('click', () => {
-    contenidoOrigen = textArea.value
-    //console.log(contenidoOrigen)
-    divDestino.innerHTML = contenidoOrigen 
+  botonReemplazar.addEventListener("click", () => {
+    contenidoOrigen = textArea.value;
+    divDestino.innerHTML = contenidoOrigen;
+  });
 
-  })
-
-/*     coleccionInput[0].addEventListener("click", () => {
-    contenidoOrigen = ''
-    //divDestino.value =  contenidoOrigen
-    //console.log(divDestino.textContent)
-    divDestino.innerHTML = contenidoOrigen
-    //console.log(contenidoOrigen)
-  })
- */
   contenedorInputsSuperiores.addEventListener("click", (e) => {
     if (e.target.className === "btn-agregar") {
       cualBotonEs(e.target);
