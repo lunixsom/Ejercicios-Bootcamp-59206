@@ -1,10 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
   const textArea = document.getElementById("origen");
   const coleccionInput = document.querySelectorAll("input");
-  const botonAMinusculas = document.querySelector("button");
+  const btnAMinusculas = document.querySelector("button");
   const divDestino = document.getElementById("destino");
   const contenedorInputsSuperiores = document.querySelector("body");
-  const botonReemplazar = document.getElementById("btn-reemplazar");
+  const btnReemplazar = document.getElementById("btn-reemplazar");
+  const btnVaciar = document.getElementsByClassName('btn-vaciar')[0]
+  const btnAMayuculas = document.getElementsByClassName('btn-convertir-a-mayusculas')[0]
 
   let contenidoOrigen = textArea.value;
 
@@ -56,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log(divDestino);
   }
 
-  botonReemplazar.addEventListener("click", () => {
+  btnReemplazar.addEventListener("click", () => {
     contenidoOrigen = textArea.value;
     divDestino.innerHTML = contenidoOrigen;
   });
@@ -68,4 +70,10 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
     }
   });
+
+  /* Punto 6 */
+
+  btnVaciar.addEventListener('click', () => {
+    divDestino.innerHTML = ''
+  })
 });
