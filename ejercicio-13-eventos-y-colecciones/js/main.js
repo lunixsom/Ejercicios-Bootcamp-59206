@@ -36,9 +36,10 @@ document.addEventListener("DOMContentLoaded", () => {
       case "Agregar 10 veces":
         agregarNvecesADivDestino(10);
         break;
-      /*       case 'Agregar n veces':
-        agregarNvecesADivDestino()
-        break; */
+      case "Agregar n veces":
+        cantidad = prompt("Inserta cantidad:");
+        agregarNvecesADivDestino(cantidad);
+        break;
 
       default:
         break;
@@ -54,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log(divDestino);
   }
 
-/*   coleccionInput[0].addEventListener("click", () => {
+  /*   coleccionInput[0].addEventListener("click", () => {
     contenidoOrigen = ''
     //divDestino.value =  contenidoOrigen
     //console.log(divDestino.textContent)
@@ -62,7 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
     //console.log(contenidoOrigen)
   }) */
 
-  
   contenedorInputsSuperiores.addEventListener("click", (e) => {
     if (e.target.className === "btn-agregar") {
       cualBotonEs(e.target);
